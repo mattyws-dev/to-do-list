@@ -1,6 +1,6 @@
 
-document.querySelector("#btnMenu").addEventListener("click", ()=>{
-
+document.querySelector("#btnMenu").addEventListener("click", (e)=>{
+    e.stopPropagation()
     const listaDesplegable = document.querySelector(".lista-desplegable")
     listaDesplegable.classList.toggle("mostrar-lista-desplegable")
 
