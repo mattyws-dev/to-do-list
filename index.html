@@ -7,7 +7,6 @@
     <meta name="keywords" content="tareas, tarea, lista, listar, to-do">
     <meta name="author" content="Mattyws Dev">
     <title>Lista de tareas 📓</title>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="assets/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="css/font-face.css">
     <link rel="stylesheet" href="css/style.css">
@@ -21,7 +20,9 @@
                         ToDo App                    
                     </a>
                     
-                    <i id="btnMenu" class="fas fa-bars"></i>
+                    <button id="btnMenu">
+                        <i  class="fas fa-bars"></i>
+                    </button>
                                                                 
                 </nav>
                 <nav class="lista-desplegable">
@@ -35,21 +36,41 @@
         <main>
             <section id="agregarTarea">
                 <form action="">
-                    <input type="text" name="inputNuevaTarea" id="inputNuevaTarea">
-                    <button type="submit" title="Agregar una nueva tarea">Agregar tarea</button>
+                    <input type="text" name="inputNuevaTarea" id="inputNuevaTarea" placeholder="Nueva tarea...">
+                    <button type="submit" title="Agregar una nueva tarea">
+                        <i class="fas fa-plus"></i>
+                    </button>
                 </form>
             </section>
-            <section id="listaDeTareas">
-                <article class="tarea">
-                    <h4>descripcion tarea</h4>
-                    <h5>8:00 20-02-2024</h5>                    
-                    <div class="btnsOpcionestarea">
-                        <span title="Eliminar tarea">❌</span>
-                        <span title="Completar tarea">✔</span>
-                    </div>
-                </article>
-            </section>
-            <section id="listaDeTareasCompletadas">
+            <table class="lista-tareas">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="tarea" id="tarea1014">
+                                <div class="descripcion-tarea">descripcion tarea uno</div>
+                                <div class="btns-tarea">  
+                                    <button title="Marcar como completada"><i id="1014" class="fas fa-check"></i></button>
+                                    <button title="Eliminar tarea"><i id="1014" class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="tarea" id="tarea1015">
+                                <div class="descripcion-tarea" >
+                                    descripcion tarea dos
+                                </div>
+                                <div class="btns-tarea">       
+                                    <button title="Marcar como completada"><i id="1015" class="fas fa-check"></i></button>                               
+                                    <button title="Eliminar tarea"><i id="1015" class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>                            
+            <!-- <section id="listaDeTareasCompletadas">
                 <article class="tarea">
                     <h4>descripcion tarea</h4>
                     <h5>8:00 20-02-2024</h5>                    
@@ -57,14 +78,25 @@
                         <span title="Borrar tarea">❌</span>                        
                     </div>
                 </article>
-            </section>
-            <template>
-
-            </template>
+            </section> -->
         </main>
         <footer></footer>
-    </div>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+        <template id="templateTarea">
+            <tr>
+                <td>
+                    <div class="tarea">
+                        <div class="descripcion-tarea">
+                            descripcion tarea
+                        </div>
+                        <div class="btns-tarea">  
+                            <button title="Marcar como completada"><i class="fas fa-check"></i></button>
+                            <button title="Eliminar tarea"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </template>
+    </div>    
     <script src="js/animacionDom.js"></script>
     <script type="module" src="js/app.js"></script>
 </body>
