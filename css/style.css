@@ -161,6 +161,7 @@ table .descripcion-tarea{
 
 table .btns-tarea{
     display: flex;
+    flex-direction: row-reverse;
 }
 
 table .btns-tarea .fas{
@@ -178,15 +179,34 @@ table .fa-check{
 }
 
 table .fa-check:hover{
-    box-shadow: 0px 0px 17px 2px #39e60a;
+    box-shadow: 0px 0px 17px 2px #6dff44;
     transition: box-shadow 0.3s ease;
 }
 
-table .fa-times{
-    background-color: #ff446d;
+table .fa-trash{
+    background-color: #f70036;
 }
 
-table .fa-times:hover{
-    box-shadow: 0px 0px 17px 2px #ff446d;
+table .fa-trash:hover{
+    box-shadow: 0px 0px 17px 2px #f70036;
     transition: box-shadow 0.3s ease;
+}
+
+table .tarea-completada{
+    text-decoration: line-through;
+    color: #444;
+    font-style: italic;
+    background-color: rgba(0, 0, 0, .2);
+    transition: background-color 1s ease;
+
+    .fa-check{
+        opacity: 0;                
+        transition: opacity 0.5s ease;
+    }
+}
+
+
+table .tarea-eliminada{
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
