@@ -1,17 +1,13 @@
-import { ListaTareas } from "./taskList.js"
+import { Interracion } from "./manejoDom.js";
 
-const tareas = new ListaTareas()
-
-document.querySelector("#agregarTarea").addEventListener('click', (e)=>{
-    e.stopPropagation()    
-    e.preventDefault()
-
-    const inputTarea = document.querySelector("input")
-    if (e.target.localName === 'button') {
-        const tarea = tareas.agregarTarea(inputTarea.value)
-        inputTarea.value = ""     
-        console.log(tareas.obtenerTareas());
-    }
+const main = () => {
+    const interaccion = new Interracion()
     
-})
+    interaccion.cargarTareas()
+    interaccion.agregarTarea()
+    interaccion.focusInput()
+    interaccion.listaDesplegableHeader()
+    interaccion.interaccionTarea()
 
+} 
+main()
