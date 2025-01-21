@@ -34,70 +34,39 @@
         <aside>            
         </aside>
         <main>
-            <section id="agregarTarea">
-                <form action="">
-                    <input type="text" name="inputNuevaTarea" id="inputNuevaTarea" placeholder="Nueva tarea...">
-                    <button type="submit" title="Agregar una nueva tarea">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </form>
-            </section>
-            <table class="lista-tareas">
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="tarea" id="tarea1014">
-                                <div class="descripcion-tarea">descripcion tarea uno</div>
-                                <div class="btns-tarea">  
-                                    <button title="Marcar como completada"><i id="1014" class="fas fa-check"></i></button>
-                                    <button title="Eliminar tarea"><i id="1014" class="fas fa-trash"></i></button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="tarea" id="tarea1015">
-                                <div class="descripcion-tarea" >
-                                    descripcion tarea dos
-                                </div>
-                                <div class="btns-tarea">       
-                                    <button title="Marcar como completada"><i id="1015" class="fas fa-check"></i></button>                               
-                                    <button title="Eliminar tarea"><i id="1015" class="fas fa-trash"></i></button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>                            
-            <!-- <section id="listaDeTareasCompletadas">
-                <article class="tarea">
-                    <h4>descripcion tarea</h4>
-                    <h5>8:00 20-02-2024</h5>                    
-                    <div class="btnsOpcionestareaCompletada">
-                        <span title="Borrar tarea">❌</span>                        
-                    </div>
-                </article>
-            </section> -->
+            <form action="" id="agregarTarea">
+                <input type="text" name="inputNuevaTarea" id="inputNuevaTarea" placeholder="Nueva tarea..." minlength="3" required>
+                <button type="submit" title="Agregar una nueva tarea">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </form>            
+            <div class="contenedor-table">
+                <table class="lista-tareas">
+                    <tbody id="tareas">                                        
+                    </tbody>
+                </table>                            
+            </div>
         </main>
-        <footer></footer>
+        <footer>            
+            <h4 class="col"><span style="font-size: 14pt;">&copy;</span> Derechos reservados 2024</h4>
+            <button class="col" title="Visitar github"><a href="https://github.com/mattyws-dev" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a></button>
+
+        </footer>
         <template id="templateTarea">
             <tr>
                 <td>
-                    <div class="tarea">
-                        <div class="descripcion-tarea">
-                            descripcion tarea
-                        </div>
+                    <div class="tarea" id="tarea1014">
+                        <div class="descripcion-tarea">descripcion tarea uno</div>
                         <div class="btns-tarea">  
-                            <button title="Marcar como completada"><i class="fas fa-check"></i></button>
-                            <button title="Eliminar tarea"><i class="fas fa-times"></i></button>
+                            <button title="Marcar como completada"><i id="1014" class="fas fa-check"></i></button>
+                            <button title="Eliminar tarea"><i id="1014" class="fas fa-trash"></i></button>
                         </div>
                     </div>
                 </td>
             </tr>
         </template>
     </div>    
-    <script src="js/animacionDom.js"></script>
     <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/manejoDom.js"></script>
 </body>
 </html>
